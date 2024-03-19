@@ -12,8 +12,8 @@ app.get('/', (req, res) => {
             <li><a href="/animals/dogs">Dogs</a></li>
             <li><a href="/animals/cats">Cats</a></li>
             <li><a href="/animals/rabbits">Rabbits</a></li>
-        </ul
-        </div>>
+        </ul>
+        </div>
     `)
 });
 
