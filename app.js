@@ -5,13 +5,15 @@ const pets = require('./petList');
 
 app.get('/', (req, res) => {
     res.send(`
-        <h1>Adopt a Pet!</h1>
+        <div>
+            <h1>Adopt a Pet!</h1>
         <p>Browse through the links below to find your new furry friend</p>
         <ul>
             <li><a href="/animals/dogs">Dogs</a></li>
             <li><a href="/animals/cats">Cats</a></li>
             <li><a href="/animals/rabbits">Rabbits</a></li>
-        </ul>
+        </ul
+        </div>>
     `)
 });
 
@@ -39,12 +41,13 @@ app.get('/animals/:pet_type/:pet_id', (req, res) => {
       html += `<img src="${findPet.url}" alt="${findPet.name}">`;
       html += `<p>${findPet.description}</p>`;
       html += `<ul><li>Breed: ${findPet.breed}</li><li>Age: ${findPet.age}</li></ul>`;
+        html += `<a href="/">Go to the homepage</a>`;
       res.send(html);
     } else {
       res.status(404).send({ message: 'Pet not found' });
     }
   } else {
-    res.status(404).send(`<h1>Pet type not found</h1>`);
+    res.status(404).send(`<h1>Pet type not found</h1><a href="/">Go to the homepage</a>`);
   }
 });
 
