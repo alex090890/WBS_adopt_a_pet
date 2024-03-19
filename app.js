@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 8001
+const port = 3000
 const pets = require('./petList');
 
 app.get('/', (req, res) => {
